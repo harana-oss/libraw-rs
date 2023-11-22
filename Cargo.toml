@@ -12,4 +12,4 @@ keywords = ["libraw", "raw", "camera", "image"]
 
 [dependencies]
 libc = "0.2"
-libraw-sys = "0.1.1"
+libraw-sys = { git = "http://github.com/harana-oss/libraw-sys" }
