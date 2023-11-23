@@ -1,12 +1,19 @@
-extern crate libraw_sys as libraw;
-extern crate libc;
+#![doc(html_root_url = "https://docs.rs/libraw-rs/0.0.4")]
 
-pub use camera::{Cameras,camera_list};
-pub use error::{Error,Result};
-pub use image::{Image,PixelType,Pixmap,Pixels,Pixel,RawPixel,Color3Pixel,Color4Pixel};
-pub use version::{Version,version};
+extern crate libraw_sys;
 
-mod camera;
+pub use self::bit_depth::BitDepth;
+pub use self::error::{Error, Result};
+pub use self::image::Image;
+pub use self::reader::Reader;
+pub use self::rawimage::RawImage;
+pub use self::sizes::Sizes;
+pub use self::thumbnail::ThumbnailFormat;
+
+mod bit_depth;
 mod error;
 mod image;
-mod version;
+mod reader;
+mod rawimage;
+mod sizes;
+mod thumbnail;

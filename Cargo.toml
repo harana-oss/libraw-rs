@@ -1,11 +1,10 @@
 [package]
 name = "libraw"
-version = "0.1.1"
-authors = ["David Cuddeback <david.cuddeback@gmail.com>"]
+version = "1.0.0"
+authors = ["harana <info@harana.com>"]
 description = "Rust wrapper for libraw"
-homepage = "https://github.com/dcuddeback/libraw-rs"
-repository = "https://github.com/dcuddeback/libraw-rs"
-documentation = "http://dcuddeback.github.io/libraw-rs/libraw/"
+homepage = "https://github.com/harana-oss/libraw-rs"
+repository = "https://github.com/harana-oss/libraw-rs"
 license = "MIT"
 readme = "README.md"
 keywords = ["libraw", "raw", "camera", "image"]

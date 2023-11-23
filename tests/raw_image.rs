@@ -1,18 +1,16 @@
 extern crate libraw;
 
+use std::fs;
 use std::path::Path;
 
+use libraw::Reader;
+
 #[test]
-fn it_can_read_raw_pixel_data() {
-    let mut image = libraw::Image::open(Path::new("tests/data/RAW_NIKON_D1.NEF")).unwrap();
+fn it_can_read_processed_data() {
+    let buf = fs::read(Path::new("tests/data/RAW_NIKON_D1.NEF")).expect("read in");
 
-    image.unpack().unwrap();
+    let reader = Reader::new();
+    let image = reader.read_8bit(&buf).expect("processing successful");
 
-    let raw = image.raw_pixmap().unwrap();
-
-    let sum = raw.pixels().fold(0, |accum, pixel| {
-        accum + pixel.value() as usize
-    });
-
-    assert_eq!(1261062932, sum);
+    assert_eq!(2012, image.width());
 }
